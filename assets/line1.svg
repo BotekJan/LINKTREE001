@@ -1,0 +1,76 @@
+<svg width="104" height="207.5" viewBox="0 0 104 207.5" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+        /* Define new scaled values */
+        .animate-line-1 {
+            stroke-dasharray: 56; /* Half of 112 */
+            stroke-dashoffset: 56;
+            animation: line-animation-1 0.15s linear forwards;
+        }
+
+        @keyframes line-animation-1 {
+            from { stroke-dashoffset: 56; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        .animate-line-2 {
+            stroke-dasharray: 177.5; /* Half of 355 */
+            stroke-dashoffset: 177.5;
+            animation: line-animation-2 0.25s linear forwards;
+            animation-delay: 0.15s;
+        }
+
+        @keyframes line-animation-2 {
+            from { stroke-dashoffset: 177.5; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        .animate-line-3 {
+            stroke-dasharray: 21; /* Half of 42 */
+            stroke-dashoffset: 21;
+            animation: line-animation-3 0.1s linear forwards;
+            animation-delay: 0.4s;
+        }
+
+        @keyframes line-animation-3 {
+            from { stroke-dashoffset: 21; }
+            to { stroke-dashoffset: 0; }
+        }
+
+        /* Left circle appears at the start */
+        .circle-left {
+            opacity: 0;
+            animation: circle-left-appear 0.1s ease-in forwards;
+            animation-delay: 0s;
+        }
+
+        @keyframes circle-left-appear {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Top circle appears at the end */
+        .circle-top {
+            opacity: 0;
+            animation: circle-top-appear 0.1s ease-in forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes circle-top-appear {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+
+    <!-- Circles at even points -->
+    <circle cx="15" cy="192.5" r="7" fill="#FF0000" class="circle-left" />
+    <circle cx="90" cy="15" r="7" fill="#FF0000" class="circle-top" />
+
+    <!-- Adjusted first horizontal line (Left to Right) -->
+    <path d="M 14.5 192.5 H 70.5" stroke="#FF0000" stroke-width="1.5" fill="none" class="animate-line-1" />
+
+    <!-- Animated second vertical line (Bottom to Top, starts after first) -->
+    <path d="M 70 192.5 V 15" stroke="#FF0000" stroke-width="1.5" fill="none" class="animate-line-2" />
+
+    <!-- Adjusted third horizontal line (Left to Right, starts after second) -->
+    <path d="M 69.5 15 H 90.5" stroke="#FF0000" stroke-width="1.5" fill="none" class="animate-line-3" />
+</svg>
