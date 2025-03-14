@@ -49,7 +49,6 @@ body {
     overflow: hidden;
 
     cursor: url('assets/svg/cursor.svg'), auto;
-
 }
 
 .overlay {
@@ -97,19 +96,20 @@ body {
     transition: background 0.5s ease-in-out;
 }
 
+.coming-soon:hover .overlay {
+    display: flex;
+}
+
 
 .page-container {
     display: grid;
     place-content: center;
     height: 100vh;
-    column-gap: 200px;
+    column-gap: 400px;
 
 
 }
 
-.coming-soon:hover .overlay {
-    display: flex;
-}
 
 .left-container {
     display: grid;
@@ -269,4 +269,117 @@ body {
 
 .button-img:hover {
     opacity: 1;
+}
+
+#svg-line-1 {
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 3;
+    position: relative;
+    top: -200px;
+    left: 120px;
+}
+
+#mid-button-1:hover #svg-line-1 {
+    opacity: 1;
+}
+
+#line-text-1 {
+    width: 400px;
+    position: relative;
+    z-index: 3;
+    top: -406px;
+    left: 225px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+
+#svg-line-2 {
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 3;
+    position: relative;
+    top: -200px;
+    left: -65px;
+    transform: rotateY(180deg);
+
+}
+
+#mid-button-2:hover #svg-line-2 {
+    opacity: 1;
+}
+
+#line-text-2 {
+    width: 400px;
+    position: relative;
+    z-index: 3;
+    top: -426px;
+    left: -215px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#svg-line-3 {
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 3;
+    position: relative;
+    top: -297px;
+    left: 4px;
+
+}
+
+#mid-button-3:hover #svg-line-3 {
+    opacity: 1;
+}
+
+#line-text-3 {
+    width: 400px;
+    position: relative;
+    z-index: 3;
+    top: -505px;
+    left: 115px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#svg-line-4 {
+    opacity: 0;
+    transition: 0.5s;
+    z-index: 3;
+    position: relative;
+    top: 102px;
+    left: 85px;
+    transform: scale(-1, -1);
+
+}
+
+#small-button-1:hover #svg-line-4 {
+    opacity: 1;
+}
+
+#line-text-4 {
+    width: 400px;
+    position: relative;
+    z-index: 3;
+    top: 73px;
+    left: 10px;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    opacity: 0;
+    transition: 0.5s;
+}
+
+#line-1,
+#line-2,
+#line-3,
+#line-4 {
+    pointer-events: none;
 }

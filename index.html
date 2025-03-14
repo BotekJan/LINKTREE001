@@ -134,9 +134,9 @@
                 </div>
             </div>
         </div>
-        <div class="right-container" style="grid-column: 2; width: 400px; height: 650px;">
+        <div class="right-container" style="grid-column: 2; width: 650px; height: 650px;">
             <div class=" upper-container width:" style="height: 325px; width: 325px;">
-                <div class="mid-button coming-soon" style="grid-column: 1; grid-row: 1">
+                <div class="mid-button" style="grid-column: 1; grid-row: 1" id="mid-button-1">
                     <div class="mid-row-1">44
                         <div class="mid-row-1-top-right">51.9962</div>
                     </div>
@@ -149,10 +149,13 @@
                         <div><img src="assets/svg/source_sans_variable.svg" alt="source_sans_variable"
                                 style=" width: 125px;"></div>
                     </div>
-                    <img src="assets/line1.svg" alt=""
-                        style="z-index: 3; position: relative; top: -200px; left: 120px; ">
+                    <div id="line-1">
+                        <img id="svg-line-1" src="assets/line1.svg" alt="" style="">
+                        <div id="line-text-1">WARNING: too iconic to be playable <br>-NPCs can only watch</div>
+                    </div>
+
                 </div>
-                <div class=" mid-button" style="grid-column: 1; grid-row: 2">
+                <div class=" mid-button" style="grid-column: 1; grid-row: 2" id="mid-button-2">
                     <div class="mid-row-1">44
                         <div class="mid-row-1-top-right">51.9962</div>
                     </div>
@@ -165,8 +168,16 @@
                         <div><img src="assets/svg/source_sans_variable.svg" alt="source_sans_variable"
                                 style=" width: 125px;"></div>
                     </div>
+                    <div id="line-2">
+                        <img id="svg-line-2" src="assets/line1.svg" alt="" style="">
+                        <div id="line-text-2">PRE-SAVE and help me <br> break the algorithm <br>[and defeat the NPCs
+                            <br> in
+                            this
+                            game]
+                        </div>
+                    </div>
                 </div>
-                <div class=" mid-button" style="grid-column: 2; grid-row: 2">
+                <div class=" mid-button" style="grid-column: 2; grid-row: 2" id="mid-button-3">
                     <div class="mid-row-1">44
                         <div class="mid-row-1-top-right">51.9962</div>
                     </div>
@@ -179,13 +190,27 @@
                         <div><img src="assets/svg/source_sans_variable.svg" alt="source_sans_variable"
                                 style=" width: 125px;"></div>
                     </div>
+                    <div id="line-3">
+                        <img id="svg-line-3" src="assets/line1.svg" alt="" style="">
+                        <div id="line-text-3">so I don't have to suffer for my art <br> like a cliché — unless you want
+                            me <br> to start selling AI-generated sunset prints or, worse, become a dictator
+                        </div>
+                    </div>
                 </div>
 
             </div>
             <div class="lower-container" style="height: 275px; margin-top: 50px; width:366px;">
-                <div class="small-button"
+                <div class="small-button" id="small-button-1"
+                    onclick="navigator.clipboard.writeText('4ra4ra.net@gmail.com')"
                     style="grid-column: 1; grid-row: 1; display: flex; justify-content: center; align-items: center;">
-                    <img style="width: 50px; height: 50px;" src="assets/svg/email-borderless.svg" alt="E-mail">
+                    <img style="width: 50px; height: 50px; position: absolute;" src="assets/svg/email-borderless.svg"
+                        alt="E-mail">
+                    <div id="line-4">
+                        <img id="svg-line-4" src="assets/line1.svg" alt="" style="">
+                        <div id="line-text-4">BOOKING <br> COLLABORATION, <br> BUSINESS <br> 4ra4ra.net@gmail.com <br>
+                            [CLICK TO COPY]
+                        </div>
+                    </div>
                 </div>
                 <div class="small-button"
                     style="grid-column: 1; grid-row: 2; display: flex; justify-content: center; align-items: center;">
