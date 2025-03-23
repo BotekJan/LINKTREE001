@@ -1,55 +1,47 @@
 :root {
+    /* NOTE: The comments about color names here may not match the actual hex values */
     --primary-color: #ff0000;
-    /* Blue */
+    /* Actually a red color */
     --secondary-color: #184947;
-    /* Green */
+    /* Teal-ish */
     --terchiary-color: #0b131b;
-    /* Dark Gray */
+    /* Very dark background */
     --quatra-color: #297b78;
-    /* Light Gray */
-
-    --border-radius: 15%
+    /* Another teal tone */
+    --border-radius: 15%;
 }
 
-
+/* ---------------------
+   GLOBAL LAYOUT & BODY
+   --------------------- */
 
 html,
 body {
     width: 100vw;
     height: 100vh;
+    margin: 0;
+    padding: 0;
     overflow: hidden;
 }
 
 body {
     position: relative;
     display: flex;
-}
-
-/* 
-      -------------------------
-      GLOBAL STYLES
-      -------------------------
-    */
-body {
-    margin: 0;
-    padding: 0;
-    /* Dark background */
     font-family: 'Source sans 3';
     color: var(--primary-color);
-    /* Neon red text */
-
-    background: url('assets/horizontal.png');
-    background-size: cover;
-
-    /* Make sure it covers the entire screen */
-    height: 100vh;
+    background: url('assets/horizontal.png') no-repeat center center/cover;
     width: 100vw;
-
-
-    overflow: hidden;
-
+    height: 100vh;
     cursor: url('assets/svg/cursor.svg'), auto;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
+
+/* ---------------------
+   OVERLAY
+   --------------------- */
 
 .overlay {
     width: 100vw;
@@ -58,41 +50,29 @@ body {
     position: fixed;
     top: 0;
     left: 0;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 0;
-    margin: 0;
-
     background: rgba(0, 0, 0, 0.5);
-
-    /* ❗️ Keep the overlay rendered, but hidden visually */
     opacity: 0;
     pointer-events: none;
-    /* Prevents interaction when hidden */
-
-    /* ✅ Immediate `backdrop-filter` application */
     backdrop-filter: blur(0px);
     -webkit-backdrop-filter: blur(0px);
-
-    /* ✅ Ensure opacity transition only */
     transition: opacity 0.5s ease-in-out;
 }
 
-/* Ensure the overlay button appears smoothly */
 .overlay-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 550px;
     width: 550px;
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    border-radius: 15%;
+    border-radius: var(--border-radius);
     border: 1px solid rgba(255, 255, 255, 0.18);
     box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
-
     transition: background 0.5s ease-in-out;
 }
 
@@ -100,41 +80,59 @@ body {
     display: flex;
 }
 
+/* ---------------------
+   PAGE CONTAINER
+   --------------------- */
 
 .page-container {
     display: grid;
     place-content: center;
     height: 100vh;
-    column-gap: 400px;
-
-
+    column-gap: 22vw;
 }
 
+/* LEFT & RIGHT CONTAINERS */
 
 .left-container {
     display: grid;
-    column-gap: 0px;
-    row-gap: 0px;
+    column-gap: 0;
+    row-gap: 0;
+    grid-column: 1;
+    width: 650px;
+    height: 650px;
 }
 
 .right-container {
     display: grid;
+    grid-column: 2;
+    height: 650px;
 }
+
+/* UPPER / LOWER CONTAINERS */
 
 .upper-container {
     display: grid;
+    height: 325px;
+    width: 325px;
 }
 
 .lower-container {
     display: grid;
     row-gap: 0;
+    height: 275px;
+    margin-top: 50px;
+    width: 366px;
 }
+
+/* ---------------------
+   BIG BUTTON
+   --------------------- */
 
 .big-button {
     height: 300px;
     width: 300px;
     border: 9px solid var(--primary-color);
-    border-radius: 15%;
+    border-radius: var(--border-radius);
     transition: 0.5s;
     -webkit-filter: url(#f1);
     filter: url(#f1);
@@ -142,8 +140,9 @@ body {
 
 .big-button:hover {
     box-shadow: 0 0 20px #ff2c2c;
-
 }
+
+/* BIG BUTTON TEXT ROWS */
 
 .big-row-1,
 .big-row-2,
@@ -162,18 +161,17 @@ body {
     font-size: 30px;
     align-self: flex-start;
     padding-top: 20px;
-    margin-left: 40%;
+    margin-left: 5%;
 }
 
 .big-row-2 {
     font-size: 120px;
     font-weight: 400;
-    font-family: arial;
+    font-family: Arial, sans-serif;
 }
 
 .big-row-2-upper-index {
     font-size: 36px;
-    top: 0;
     align-self: flex-start;
     padding-left: 5px;
 }
@@ -184,15 +182,15 @@ body {
     font-size: 28px;
 }
 
-
-
-
+/* ---------------------
+   MID BUTTON
+   --------------------- */
 
 .mid-button {
     height: 150px;
     width: 150px;
     border: 5px solid var(--primary-color);
-    border-radius: 15%;
+    border-radius: var(--border-radius);
     transition: 0.5s;
     -webkit-filter: url(#f1);
     filter: url(#f1);
@@ -202,6 +200,7 @@ body {
     box-shadow: 0 0 15px #ff2c2c;
 }
 
+/* MID BUTTON TEXT ROWS */
 
 .mid-row-1,
 .mid-row-2,
@@ -226,14 +225,12 @@ body {
 .mid-row-2 {
     font-size: 60px;
     font-weight: 400;
-    font-family: arial;
+    font-family: Arial, sans-serif;
 }
 
 .mid-row-2-upper-index {
     font-size: 20px;
-    top: 0;
     align-self: flex-start;
-
 }
 
 .mid-row-3 {
@@ -241,6 +238,10 @@ body {
     align-items: start;
     font-size: 14px;
 }
+
+/* ---------------------
+   SMALL BUTTON
+   --------------------- */
 
 .small-button {
     height: 75px;
@@ -256,6 +257,9 @@ body {
     box-shadow: 0 0 10px #ff2c2c;
 }
 
+/* ---------------------
+   BUTTON IMAGES
+   --------------------- */
 
 .button-img {
     height: 300px;
@@ -264,18 +268,35 @@ body {
     position: absolute;
     opacity: 0;
     transition: 0.5s ease-in-out;
-
 }
 
 .button-img:hover {
     opacity: 1;
 }
 
-#svg-line-1 {
+/* ---------------------
+   SVG LINES & TEXT
+   --------------------- */
+
+#line-1,
+#line-2,
+#line-3,
+#line-4 {
+    pointer-events: none;
+}
+
+#svg-line-1,
+#svg-line-2,
+#svg-line-3,
+#svg-line-4 {
     opacity: 0;
     transition: 0.5s;
     z-index: 3;
     position: relative;
+}
+
+/* LINE 1 */
+#svg-line-1 {
     top: -200px;
     left: 120px;
 }
@@ -296,16 +317,11 @@ body {
     transition: 0.5s;
 }
 
-
+/* LINE 2 */
 #svg-line-2 {
-    opacity: 0;
-    transition: 0.5s;
-    z-index: 3;
-    position: relative;
     top: -200px;
     left: -65px;
     transform: rotateY(180deg);
-
 }
 
 #mid-button-2:hover #svg-line-2 {
@@ -324,14 +340,10 @@ body {
     transition: 0.5s;
 }
 
+/* LINE 3 */
 #svg-line-3 {
-    opacity: 0;
-    transition: 0.5s;
-    z-index: 3;
-    position: relative;
     top: -297px;
     left: 4px;
-
 }
 
 #mid-button-3:hover #svg-line-3 {
@@ -350,15 +362,11 @@ body {
     transition: 0.5s;
 }
 
+/* LINE 4 */
 #svg-line-4 {
-    opacity: 0;
-    transition: 0.5s;
-    z-index: 3;
-    position: relative;
     top: 102px;
     left: 85px;
     transform: scale(-1, -1);
-
 }
 
 #small-button-1:hover #svg-line-4 {
@@ -377,9 +385,380 @@ body {
     transition: 0.5s;
 }
 
-#line-1,
-#line-2,
-#line-3,
-#line-4 {
-    pointer-events: none;
+/* ---------------------
+   SPECIFIC ELEMENTS
+   --------------------- */
+
+#chromeup_button {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#chromesome_button {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#coming-soon {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    font-size: 60px;
+    -webkit-filter: url(#f2);
+    filter: url(#f2);
+    text-shadow: 0 0 12px rgba(255, 255, 255, 0.99);
+    color: rgba(255, 255, 255, 0.08);
+}
+
+#arrow-SVG {
+    height: 50px;
+    width: 50px;
+    rotate: 180deg;
+}
+
+#mugshot_button {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#wanted {
+    margin-left: 20%;
+    margin-top: 7px;
+}
+
+#wanted-SVG {
+    width: 150px;
+}
+
+#mug {
+    font-size: 80px;
+}
+
+#mug-SVG {
+    height: 50px;
+    width: 50px;
+}
+
+#agi_button {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.source-sans-variable-SVG {
+    width: 250px;
+    /* ...any other styles... */
+}
+
+#source-sans-variable-SVG-2 {
+    width: 200px;
+    margin-top: 7px;
+}
+
+#agi-big-row {
+    font-size: 18px;
+}
+
+#mid-button-1 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.source-sans-variable-SVG-3 {
+    width: 125px;
+}
+
+#mid-button-2 {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#arrow-SVG-2 {
+    height: 25px;
+    width: 25px;
+}
+
+#chromesome-pre-save {
+    font-size: 12px;
+}
+
+#mid-button-3 {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#pay {
+    font-size: 50px;
+}
+
+#me {
+    font-size: 20px;
+}
+
+#big-money {
+    font-size: 10px;
+}
+
+#small-button-1 {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.small-SVG {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+}
+
+/* ---------------------
+   SOCIAL BUTTONS
+   --------------------- */
+
+/* Shared properties */
+#spotify,
+#apple-music,
+#youtube,
+#instagram,
+#tiktok,
+#facebook,
+#pinterest {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Unique grid placement */
+#spotify {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#apple-music {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+#youtube {
+    grid-column: 3;
+    grid-row: 2;
+}
+
+#instagram {
+    grid-column: 1;
+    grid-row: 3;
+}
+
+#tiktok {
+    grid-column: 2;
+    grid-row: 3;
+}
+
+#facebook {
+    grid-column: 3;
+    grid-row: 3;
+}
+
+#pinterest {
+    grid-column: 4;
+    grid-row: 3;
+}
+
+#instagram-SVG {
+    width: 80px;
+    height: 80px;
+}
+
+/* =====================
+   RESPONSIVE MEDIA QUERIES
+   ===================== */
+
+/* ----------------------------------
+   Tablet sizes (example: max 1024px)
+   ---------------------------------- */
+/* ----------------------------------
+   Tablets and below (max-width: 1024px)
+   ---------------------------------- */
+/* ----------------------------------
+   Tablets and below (max-width: 1024px)
+   ---------------------------------- */
+@media (max-width: 1024px) {
+
+    body {
+        overflow: scroll;
+        justify-content: unset;
+    }
+
+    /* Turn the page container into a column flex layout and center it */
+    .page-container {
+        display: flex;
+        flex-direction: column;
+
+        /* horizontally center */
+        justify-content: center;
+        /* vertically center if there's extra space */
+
+        height: auto;
+        padding: 20px 10px;
+        /* gap or margin can help spacing */
+        gap: 30px;
+        column-gap: 15vw;
+
+        /* optional, adds vertical spacing between containers */
+
+    }
+
+    .left-container,
+    .right-container {
+        /* Let each container shrink to content or stretch to something sensible */
+        width: auto;
+        height: 100%;
+        margin: 0;
+        gap: 20px
+            /* remove any bottom margin if you want them purely flex-centered */
+    }
+
+
+
+    /* Shrink only the BIG button on tablets */
+    .big-button {
+        height: 400px;
+        width: 400px;
+        border: 10px solid var(--primary-color);
+    }
+
+    .big-row-1 {
+        font-size: 60px;
+    }
+
+    .big-row-2 {
+        font-size: 133px;
+    }
+
+    .big-row-3 {
+        font-size: 32px;
+    }
+
+    .upper-container {
+        height: 100%;
+        gap: 20px;
+        padding-top: 50px;
+    }
+
+    .lower-container {
+        height: 100%;
+    }
+
+    .mid-button {
+        height: 400px;
+        width: 400px;
+        border: 10px solid var(--primary-color);
+    }
+
+    .mid-row-1 {
+        font-size: 60px;
+    }
+
+    .mid-row-2 {
+        font-size: 133px;
+    }
+
+    .mid-row-3 {
+        font-size: 32px;
+    }
+
+    #pay {
+        font-size: 133px;
+    }
+
+    #me,
+    .mid-row-2-upper-index {
+        font-size: 60px
+    }
+
+    #chromesome-pre-save {
+        font-size: 32px;
+    }
+
+    #big-money {
+        font-size: 32px;
+    }
+
+    .source-sans-variable-SVG-3 {
+        width: 300px;
+    }
+
+    #arrow-SVG-2 {
+        height: 40px;
+        width: 40px;
+    }
+
+    .mid-row-1-top-right {
+        font-size: 32px;
+    }
+
+    .small-button {
+        height: 150px;
+        width: 150px;
+        border: 10px solid var(--primary-color);
+        border-radius: 25%;
+
+    }
+
+    .small-SVG {
+        width: 80px;
+        height: 80px;
+    }
+
+
+
+
+
+    /* Keep mid & small buttons at their original sizes (no changes) */
+}
+
+/* ----------------------------------
+   Mobile sizes (max-width: 600px)
+   ---------------------------------- */
+@media (max-width: 600px) {
+    body {
+        overflow-y: auto;
+    }
+
+    /* Layout is already a centered column from the tablet query */
+    /* Further reduce only the big button */
+    .big-button {
+        height: 200px;
+        width: 200px;
+        border: 6px solid var(--primary-color);
+    }
+
+    .big-row-1 {
+        font-size: 35px;
+    }
+
+    .big-row-2 {
+        font-size: 80px;
+    }
+
+    .big-row-3 {
+        font-size: 20px;
+    }
+
+
+
+
+    .left-container {
+        column-count: 2;
+    }
+
+    .upper-container {
+        grid-column: 1;
+    }
+
+    .lower-container {
+        grid-column: 2;
+    }
+
+    /* Mid & small buttons remain unchanged */
 }
