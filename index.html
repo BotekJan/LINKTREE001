@@ -58,7 +58,13 @@
             </filter>
         </defs>
     </svg>
-
+    <div id="soon" class="overlay">
+        <div class="overlay-button" style="display: flex; justify-content: center; align-items: center;">
+            <div style="font-family: Arial; font-weight: 400; font-size: 60px; -webkit-filter: url(#f2);
+            filter: url(#f2);
+            text-shadow: 0 0 12px rgba(255, 255, 255, 0.99); color: rgba(255, 255, 255, 0.08)">COMING SOON</div>
+        </div>
+    </div>
     <div class="page-container">
         <div class="left-container">
 
@@ -167,7 +173,7 @@
                         </div>
                     </div>
                 </div>
-                <div class=" mid-button" id="mid-button-3">
+                <div class="mid-button coming-soon" id="mid-button-3">
                     <div class="mid-row-1">44
                         <div class="mid-row-1-top-right">51.9962</div>
                     </div>
@@ -225,10 +231,10 @@
             </div>
         </div>
     </div>
-    <audio id="agi-audio" src="assets/music/AGI chorus.mp3"></audio>
-    <audio id="chromeup-audio" src="assets/music/CHROME UP-chorus.mp3"></audio>
-    <audio id="chromesome-audio" src="assets/music/CHROMEsoME-chorus.mp3"></audio>
-    <audio id="mugshot-audio" src="assets/music/MUGSHOT TYPE chorus.mp3"></audio>
+    <audio preload="auto" id="agi-audio" src="assets/music/AGI chorus.mp3"></audio>
+    <audio preload="auto" id="chromeup-audio" src="assets/music/CHROME UP-chorus.mp3"></audio>
+    <audio preload="auto" id="chromesome-audio" src="assets/music/CHROMEsoME-chorus.mp3"></audio>
+    <audio preload="auto" id="mugshot-audio" src="assets/music/MUGSHOT TYPE chorus.mp3"></audio>
     <script src="index.js"></script>
 </body>
 
