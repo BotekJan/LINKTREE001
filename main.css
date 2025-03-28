@@ -30,6 +30,10 @@ body {
     font-family: 'Source sans 3';
     color: var(--primary-color);
     /* background: url('assets/horizontal.png') no-repeat center center/cover;*/
+    background:
+        radial-gradient(closest-corner, rgba(35, 50, 80, 255), transparent),
+        linear-gradient(to left, #0d1619, transparent), #020507;
+    ;
 
     width: 100vw;
     height: 100vh;
@@ -723,43 +727,182 @@ body {
    ---------------------------------- */
 @media (max-width: 600px) {
     body {
-        overflow-y: auto;
+        overflow: scroll;
+        justify-content: unset;
     }
 
-    /* Layout is already a centered column from the tablet query */
-    /* Further reduce only the big button */
+    /* Turn the page container into a column flex layout and center it */
+    .page-container {
+        display: flex;
+        flex-direction: column;
+
+        /* horizontally center */
+        justify-content: center;
+
+        height: auto;
+        /* Reduced from 20px 10px to 10px 5px */
+        padding: 10px 5px;
+        /* Reduced gap from 30px to 15px */
+        gap: 15px;
+        /* Reduced column-gap from 15vw to 7.5vw */
+        column-gap: 7.5vw;
+    }
+
+    .left-container,
+    .right-container {
+        width: auto;
+        height: 100%;
+        margin: 0;
+        /* Reduced gap from 20px to 10px */
+        gap: 10px;
+    }
+
+    /* BIG button halved from 400px to 200px, border from 10px to 5px */
     .big-button {
         height: 200px;
         width: 200px;
-        border: 6px solid var(--primary-color);
+        border: 5px solid var(--primary-color);
     }
 
+    /* Halve the font sizes */
     .big-row-1 {
-        font-size: 35px;
+        font-size: 30px;
+        /* was 60px */
+    }
+
+    .big-row-1-top-right {
+        padding: 0px;
+        padding-left: 35px;
+    }
+
+    #wanted-SVG {
+        width: 105px;
+        padding: 0px;
     }
 
     .big-row-2 {
-        font-size: 80px;
+        font-size: 66px;
+        /* was 133px */
+    }
+
+    .button-img {
+        width: 25px;
+        height: 25px;
+    }
+
+    #mug {
+        font-size: 60px;
+
+    }
+
+    #mug-SVG {
+        width: 25px;
+        height: 25px;
+    }
+
+    #agi-big-row {
+        font-size: 12px;
     }
 
     .big-row-3 {
-        font-size: 20px;
+        font-size: 16px;
+        /* was 32px */
     }
 
-
-
-
-    .left-container {
-        column-count: 2;
+    .source-sans-variable-SVG {
+        width: 150px;
     }
 
+    /* Halve padding-top from 50px to 25px, gap from 20px to 10px */
     .upper-container {
-        grid-column: 1;
+        height: 100%;
+        gap: 10px;
+        padding-top: 25px;
     }
 
     .lower-container {
-        grid-column: 2;
+        height: 100%;
     }
 
-    /* Mid & small buttons remain unchanged */
+    /* MID button: halved dimensions/border */
+    .mid-button {
+        height: 200px;
+        width: 200px;
+        border: 5px solid var(--primary-color);
+    }
+
+    .mid-row-1 {
+        font-size: 30px;
+        /* was 60px */
+    }
+
+    .mid-row-2 {
+        font-size: 66px;
+        /* was 133px */
+    }
+
+    .mid-row-3 {
+        font-size: 16px;
+        /* was 32px */
+    }
+
+    /* Halve additional font sizes */
+    #pay {
+        font-size: 66px;
+        /* was 133px */
+    }
+
+    #me,
+    .mid-row-2-upper-index {
+        font-size: 30px;
+        /* was 60px */
+    }
+
+    #chromesome-pre-save {
+        font-size: 16px;
+        /* was 32px */
+    }
+
+    #big-money {
+        font-size: 16px;
+        /* was 32px */
+    }
+
+    /* Halve SVG widths */
+    .source-sans-variable-SVG-3 {
+        width: 150px;
+        /* was 300px */
+    }
+
+    /* Halve arrow dimensions */
+    #arrow-SVG-2 {
+        height: 20px;
+        width: 20px;
+    }
+
+    /* Halve font size of .mid-row-1-top-right */
+    .mid-row-1-top-right {
+        font-size: 16px;
+        /* was 32px */
+    }
+
+    /* SMALL button halved dimensions/border, plus border-radius */
+    .small-button {
+        height: 75px;
+        /* was 150px */
+        width: 75px;
+        /* was 150px */
+        border: 5px solid var(--primary-color);
+        /* was 10px */
+        border-radius: 12.5%;
+        /* was 25%, halved */
+    }
+
+    /* Halve SVG icon sizes */
+    .small-SVG {
+        width: 40px;
+        /* was 80px */
+        height: 40px;
+        /* was 80px */
+    }
 }
